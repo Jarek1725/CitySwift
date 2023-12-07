@@ -1,8 +1,8 @@
 package org.example.server.service;
 
-import org.example.dao.ParticularArea;
-import org.example.dto.ListOfAddressInArea;
-import org.example.dto.ServerResponse;
+import org.example.common.dao.ParticularArea;
+import org.example.common.dto.ListOfAddressInArea;
+import org.example.common.dto.ServerResponse;
 import org.example.server.model.AddressModel;
 import org.example.server.repository.AddressRepository;
 

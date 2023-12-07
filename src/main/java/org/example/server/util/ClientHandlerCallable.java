@@ -1,8 +1,9 @@
 package org.example.server.util;
 
 
-import org.example.dao.ClientRequest;
-import org.example.dto.ServerResponse;
+
+import org.example.common.dao.ClientRequest;
+import org.example.common.dto.ServerResponse;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

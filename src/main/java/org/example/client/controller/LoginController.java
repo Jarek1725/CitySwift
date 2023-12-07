@@ -6,10 +6,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-import org.example.dao.ClientRequest;
-import org.example.dao.UserCredential;
-import org.example.dto.ServerResponse;
+import org.example.common.dao.ClientRequest;
+import org.example.common.dao.UserCredential;
+import org.example.common.dto.ServerResponse;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;

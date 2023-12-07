@@ -1,6 +1,7 @@
 package org.example.server.service;
 
-import org.example.dto.ServerResponse;
+
+import org.example.common.dto.ServerResponse;
 
 import java.io.Serializable;
 

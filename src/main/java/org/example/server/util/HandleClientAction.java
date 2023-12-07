@@ -1,9 +1,9 @@
 package org.example.server.util;
 
-import org.example.dao.ClientRequest;
-import org.example.dao.ParticularArea;
-import org.example.dao.UserCredential;
-import org.example.dto.ServerResponse;
+import org.example.common.dao.ClientRequest;
+import org.example.common.dao.ParticularArea;
+import org.example.common.dao.UserCredential;
+import org.example.common.dto.ServerResponse;
 import org.example.server.service.AddressService;
 import org.example.server.service.UserService;
 
