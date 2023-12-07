@@ -1,0 +1,10 @@
+Dec 07, 2023 6:09:03 PM org.example.server.util.AppLogger info
+INFO: Starting application
+Dec 07, 2023 6:09:03 PM org.example.server.util.AppLogger info
+INFO: Creating connection pool with size: 10 connections
+Dec 07, 2023 6:09:50 PM org.example.server.util.AppLogger info
+INFO: Starting application
+Dec 07, 2023 6:09:50 PM org.example.server.util.AppLogger info
+INFO: Creating connection pool with size: 10 connections
+Dec 07, 2023 6:09:51 PM org.example.server.util.AppLogger warning
+WARNING: Server exception: Address already in use: bind

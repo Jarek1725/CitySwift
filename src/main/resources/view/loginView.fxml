@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0"
+            prefWidth="749.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.client.controller.LoginController">
+    <left>
+        <AnchorPane prefHeight="530.0" prefWidth="500.0" styleClass="left_panel" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView layoutX="150.0" layoutY="30" fitWidth="210" preserveRatio="true">
+                    <Image url="@/image/logo_white.png"/>
+                </ImageView>
+                <Label layoutX="200.0" layoutY="190.0" prefHeight="36.0" prefWidth="247.0" styleClass="login_logo_text"
+                       text="CitySwift">
+                    <font>
+                        <Font size="23.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="46.0" layoutY="436.0" prefHeight="36.0" prefWidth="224.0">
+                    <font>
+                        <Font size="30.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="200.0" layoutY="281.0" prefHeight="36.0" styleClass="welcome_bottom_text"
+                       prefWidth="191.0" text="Welcome"/>
+                <Label layoutX="165.0" layoutY="441.0" prefHeight="36.0" styleClass="login_bottom_text"
+                       prefWidth="191.0" text="Copyright (©) All rights reserved">
+                    <font>
+                        <Font name="System Italic" size="13.0"/>
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+        <AnchorPane prefHeight="512.0" prefWidth="249.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="usernameTextField" styleClass="basic_input" layoutX="90.0" layoutY="163.0"
+                           prefHeight="26.0" prefWidth="200.0" promptText="Login"/>
+                <PasswordField fx:id="passwordTextField" styleClass="basic_input" layoutX="90.0" layoutY="225.0"
+                               prefHeight="26.0" prefWidth="200.0" promptText="Hasło"/>
+                <Button fx:id="loginButton" layoutX="145" layoutY="302.0" mnemonicParsing="false"
+                        onAction="#loginButtonOn" styleClass="basic_button" text="Zaloguj"/>
+                <Button fx:id="forgotPassword" layoutX="115" layoutY="350.0" mnemonicParsing="false"
+                        styleClass="non_fill_button" text="Zapomniałeś hasła?"/>
+                <Label fx:id="loginMessageLabel" layoutX="191.0" layoutY="74.0" prefHeight="18.0" prefWidth="179.0"/>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
