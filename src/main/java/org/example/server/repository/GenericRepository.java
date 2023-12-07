@@ -39,6 +39,7 @@ public class GenericRepository<T> {
         }
     }
 
+
     public Optional<T> fetchSingleRow(String sql, RowMapper<T> rowMapper, List<Object> params) {
         AppLogger.info("Executing query: " + sql);
         Connection connection = null;
@@ -63,6 +64,27 @@ public class GenericRepository<T> {
             Server.getConnectionPool().returnConnection(connection);
         }
     }
+
+    public int insert(String sql, List<Object> params) {
+        AppLogger.info("Executing insert statement: " + sql);
+        Connection connection = null;
+
+        try {
+            connection = Server.getConnectionPool().borrowConnection();
+            PreparedStatement stmt = prepareStatement(connection, sql, params);
+            int affectedRows = stmt.executeUpdate();
+
+            AppLogger.info("Insert executed, number of affected rows: " + affectedRows);
+            return affectedRows;
+
+        } catch (SQLException e) {
+            AppLogger.severe("SQLException in GenericRepository.insert", e);
+            throw new RuntimeException("Error executing insert", e);
+        } finally {
+            Server.getConnectionPool().returnConnection(connection);
+        }
+    }
+
 
     private PreparedStatement prepareStatement(Connection connection, String sql, List<Object> params) throws SQLException {
         PreparedStatement stmt = connection.prepareStatement(sql);

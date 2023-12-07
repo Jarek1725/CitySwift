@@ -1,6 +1,6 @@
 package org.example.server.util;
 
-import org.example.common.dao.ClientRequest;
+import org.example.common.dto.ClientRequest;
 import org.example.common.dto.ServerResponse;
 import org.example.server.service.ServerResponseService;
 

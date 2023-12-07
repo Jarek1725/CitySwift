@@ -1,6 +1,6 @@
 package org.example.server.repository;
 
-import org.example.common.dao.ParticularArea;
+import org.example.common.dto.ParticularArea;
 import org.example.server.mapper.ToAddressModelMapper;
 import org.example.server.model.AddressModel;
 

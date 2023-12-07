@@ -1,6 +1,6 @@
 package org.example.client.util;
 
-import org.example.common.dao.ClientRequest;
+import org.example.common.dto.ClientRequest;
 import org.example.common.dto.ServerResponse;
 
 import java.io.ObjectInputStream;
