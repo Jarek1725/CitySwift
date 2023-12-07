@@ -1,4 +1,4 @@
-package org.example.dao;
+package org.example.common.dao;
 
 import java.io.Serial;
 import java.io.Serializable;

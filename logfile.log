@@ -8,3 +8,45 @@ Dec 07, 2023 6:09:50 PM org.example.server.util.AppLogger info
 INFO: Creating connection pool with size: 10 connections
 Dec 07, 2023 6:09:51 PM org.example.server.util.AppLogger warning
 WARNING: Server exception: Address already in use: bind
+Dec 07, 2023 6:10:04 PM org.example.server.util.AppLogger info
+INFO: Starting application
+Dec 07, 2023 6:10:04 PM org.example.server.util.AppLogger info
+INFO: Creating connection pool with size: 10 connections
+Dec 07, 2023 6:10:05 PM org.example.server.util.AppLogger info
+INFO: Server started on port: 8081
+Dec 07, 2023 6:12:44 PM org.example.server.util.AppLogger info
+INFO: New client connected
+Dec 07, 2023 6:12:44 PM org.example.server.util.AppLogger info
+INFO: Executing query: SELECT * FROM app_user WHERE mail = ? and password=?  
+Dec 07, 2023 6:12:44 PM org.example.server.util.AppLogger info
+INFO: Borrowing connection, available: 10 connections
+Dec 07, 2023 6:12:44 PM org.example.server.util.AppLogger info
+INFO: Query executed, no result found
+Dec 07, 2023 6:12:44 PM org.example.server.util.AppLogger info
+INFO: Returning connection to pool, available: 9 connections
+Dec 07, 2023 6:34:17 PM org.example.server.util.AppLogger info
+INFO: Starting application
+Dec 07, 2023 6:34:17 PM org.example.server.util.AppLogger info
+INFO: Creating connection pool with size: 10 connections
+Dec 07, 2023 6:34:18 PM org.example.server.util.AppLogger info
+INFO: Server started on port: 8081
+Dec 07, 2023 6:35:50 PM org.example.server.util.AppLogger info
+INFO: New client connected
+Dec 07, 2023 6:35:50 PM org.example.server.util.AppLogger info
+INFO: Executing query: SELECT * FROM app_user WHERE mail = ? and password=?  
+Dec 07, 2023 6:35:50 PM org.example.server.util.AppLogger info
+INFO: Borrowing connection, available: 10 connections
+Dec 07, 2023 6:35:50 PM org.example.server.util.AppLogger info
+INFO: Query executed, result found
+Dec 07, 2023 6:35:50 PM org.example.server.util.AppLogger info
+INFO: Returning connection to pool, available: 9 connections
+Dec 07, 2023 6:35:59 PM org.example.server.util.AppLogger info
+INFO: New client connected
+Dec 07, 2023 6:35:59 PM org.example.server.util.AppLogger info
+INFO: Executing query: SELECT * FROM app_user WHERE mail = ? and password=?  
+Dec 07, 2023 6:35:59 PM org.example.server.util.AppLogger info
+INFO: Borrowing connection, available: 10 connections
+Dec 07, 2023 6:35:59 PM org.example.server.util.AppLogger info
+INFO: Query executed, no result found
+Dec 07, 2023 6:35:59 PM org.example.server.util.AppLogger info
+INFO: Returning connection to pool, available: 9 connections
