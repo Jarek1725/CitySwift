@@ -34,4 +34,13 @@ public class ServerResponseService {
 
         return serverResponse;
     }
+
+    public static ServerResponse serverErrorResponse () {
+        ServerResponse serverResponse = new ServerResponse();
+
+        serverResponse.setResultCode(500);
+        serverResponse.setResultMessage("Server error");
+
+        return serverResponse;
+    }
 }

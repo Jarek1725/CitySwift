@@ -1,9 +1,8 @@
 package org.example.server.util;
 
-
-
 import org.example.common.dao.ClientRequest;
 import org.example.common.dto.ServerResponse;
+import org.example.server.service.ServerResponseService;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -19,25 +18,17 @@ public class ClientHandlerCallable implements Callable<ServerResponse> {
     }
 
     @Override
-    public ServerResponse call() throws Exception {
+    public ServerResponse call() {
         try (ObjectInputStream objectInputStream = new ObjectInputStream(clientSocket.getInputStream());
              ObjectOutputStream objectOutputStream = new ObjectOutputStream(clientSocket.getOutputStream())) {
             ClientRequest clientRequest = (ClientRequest) objectInputStream.readObject();
-            System.out.println(clientRequest.getAction());
             ServerResponse response = HandleClientAction.handleClientAction(clientRequest);
             objectOutputStream.writeObject(response);
             return response;
-
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
-            ServerResponse response = new ServerResponse();
-            response.setResultCode(500);
-            response.setResultMessage("Internal Server Error");
-            return response;
-        }
-
-        finally {
+            return ServerResponseService.serverErrorResponse();
+        } finally {
             try {
                 clientSocket.close();
             } catch (IOException e) {

@@ -6,13 +6,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import org.example.client.util.NetworkClient;
 import org.example.common.dao.ClientRequest;
 import org.example.common.dao.UserCredential;
 import org.example.common.dto.ServerResponse;
-
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.net.Socket;
 
 public class LoginController {
     @FXML
@@ -23,8 +20,6 @@ public class LoginController {
     private TextField usernameTextField;
     @FXML
     private PasswordField passwordTextField;
-    private final String serverAddress = "127.0.0.1";
-    private final int serverPort = 8081;
 
     public void loginButtonOn(ActionEvent on) {
         if (!usernameTextField.getText().isBlank() && !passwordTextField.getText().isBlank()) {
@@ -36,16 +31,13 @@ public class LoginController {
     }
 
     private void sendLoginRequest(String username, String password) {
-        try (Socket socket = new Socket(serverAddress, serverPort);
-             ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
-             ObjectInputStream inputStream = new ObjectInputStream(socket.getInputStream())) {
+        NetworkClient networkClient = new NetworkClient();
 
+        try {
             UserCredential credentials = new UserCredential(username, password);
             ClientRequest request = new ClientRequest("login", credentials);
 
-            outputStream.writeObject(request);
-
-            Object response = inputStream.readObject();
+            ServerResponse response = networkClient.sendRequest(request);
             handleServerResponse(response);
 
         } catch (Exception e) {
