@@ -1,4 +1,4 @@
-package org.example.dto;
+package org.example.common.dto;
 
 import org.example.server.model.AddressModel;
 

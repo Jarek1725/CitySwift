@@ -1,6 +1,6 @@
 package org.example.server.repository;
 
-import org.example.dto.BasicUserData;
+import org.example.common.dto.BasicUserData;
 import org.example.server.mapper.ToUserModelMapper;
 import org.example.server.model.AddressModel;
 import org.example.server.model.UserModel;

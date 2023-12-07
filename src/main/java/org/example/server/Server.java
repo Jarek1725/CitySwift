@@ -1,6 +1,6 @@
 package org.example.server;
 
-import org.example.dto.ServerResponse;
+import org.example.common.dto.ServerResponse;
 import org.example.server.util.AppLogger;
 import org.example.server.util.ClientHandlerCallable;
 import org.example.server.util.ConnectionPool;

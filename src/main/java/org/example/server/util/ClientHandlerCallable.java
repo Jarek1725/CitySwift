@@ -1,8 +1,9 @@
 package org.example.server.util;
 
 
-import org.example.dao.ClientRequest;
-import org.example.dto.ServerResponse;
+
+import org.example.common.dao.ClientRequest;
+import org.example.common.dto.ServerResponse;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -24,8 +25,8 @@ public class ClientHandlerCallable implements Callable<ServerResponse> {
             ClientRequest clientRequest = (ClientRequest) objectInputStream.readObject();
             System.out.println(clientRequest.getAction());
             ServerResponse response = HandleClientAction.handleClientAction(clientRequest);
-            objectOutputStream.writeObject(response); // Send the response back to client
-            return response; // This return is more for your Callable's contract. It can be used if needed.
+            objectOutputStream.writeObject(response);
+            return response;
 
         }
         catch (Exception e) {
@@ -38,7 +39,7 @@ public class ClientHandlerCallable implements Callable<ServerResponse> {
 
         finally {
             try {
-                clientSocket.close(); // Ensure the socket is closed after handling the request
+                clientSocket.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -6,10 +6,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-import org.example.dao.ClientRequest;
-import org.example.dao.UserCredential;
-import org.example.dto.ServerResponse;
+import org.example.common.dao.ClientRequest;
+import org.example.common.dao.UserCredential;
+import org.example.common.dto.ServerResponse;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -24,8 +23,8 @@ public class LoginController {
     private TextField usernameTextField;
     @FXML
     private PasswordField passwordTextField;
-    private final String serverAddress = "127.0.0.1"; // Server IP
-    private final int serverPort = 8081; // Server Port
+    private final String serverAddress = "127.0.0.1";
+    private final int serverPort = 8081;
 
     public void loginButtonOn(ActionEvent on) {
         if (!usernameTextField.getText().isBlank() && !passwordTextField.getText().isBlank()) {
