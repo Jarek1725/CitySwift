@@ -1,9 +1,6 @@
 package org.example.server.util;
 
-import org.example.common.dao.ClientRequest;
-import org.example.common.dao.ParticularArea;
-import org.example.common.dao.UserCredential;
-import org.example.common.dto.ServerResponse;
+import org.example.common.dto.*;
 import org.example.server.service.AddressService;
 import org.example.server.service.UserService;
 
@@ -20,6 +17,9 @@ public class HandleClientAction {
                 break;
             case "getUsersLivingInArea":
                 serverResponse = AddressService.ifUsersInParticularArea((ParticularArea) clientRequest.getData());
+                break;
+            case "register":
+                serverResponse = UserService.register((CreateUserData) clientRequest.getData());
                 break;
             default:
                 serverResponse.setResultCode(404);

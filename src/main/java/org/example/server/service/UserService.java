@@ -1,9 +1,6 @@
 package org.example.server.service;
 
-import org.example.common.dao.UserCredential;
-import org.example.common.dto.BasicUserData;
-import org.example.common.dto.ServerResponse;
-import org.example.common.dto.UserToken;
+import org.example.common.dto.*;
 import org.example.server.model.UserModel;
 import org.example.server.repository.UserRepository;
 
@@ -27,6 +24,15 @@ public class UserService {
 
         }else{
             return ServerResponseService.notFoundServerResponse();
+        }
+    }
+
+    public static ServerResponse register(CreateUserData createUserData){
+        int userId = userRepository.insertUser(createUserData);
+        if(userId > 0){
+            return ServerResponseService.createPositiveServerResponse(new UserToken(userId));
+        }else{
+            return ServerResponseService.serverErrorResponse();
         }
     }
 }

@@ -7,8 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.example.client.util.NetworkClient;
-import org.example.common.dao.ClientRequest;
-import org.example.common.dao.UserCredential;
+import org.example.common.dto.ClientRequest;
+import org.example.common.dto.UserCredential;
 import org.example.common.dto.ServerResponse;
 
 public class LoginController {
