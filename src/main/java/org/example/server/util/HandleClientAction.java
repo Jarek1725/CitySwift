@@ -13,16 +13,13 @@ public class HandleClientAction {
 
         switch (clientRequest.getAction()) {
             case "getUserBasicData":
-                int data = (int) clientRequest.getData();
-                serverResponse = UserService.getUserBasicData(data);
+                serverResponse = UserService.getUserBasicData((int) clientRequest.getData());
                 break;
             case "login":
-                UserCredential loginData = (UserCredential) clientRequest.getData();
-                serverResponse = UserService.login(loginData);
+                serverResponse = UserService.login((UserCredential) clientRequest.getData());
                 break;
             case "getUsersLivingInArea":
-                ParticularArea newUserArea = (ParticularArea) clientRequest.getData();
-                serverResponse = AddressService.ifUsersInParticularArea(newUserArea);
+                serverResponse = AddressService.ifUsersInParticularArea((ParticularArea) clientRequest.getData());
                 break;
             default:
                 serverResponse.setResultCode(404);
